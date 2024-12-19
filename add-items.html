@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Item - Swap Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Add Item</h1>
+    <form id="addItemForm">
+      <div class="form-group">
+        <label for="Name"> Name:</label>
+        <input type="text" id="Name" name="Name" placeholder="Enter item name" required>
+      </div>
+      <div class="form-group">
+        <label for="itemPhoto">Upload Photo:</label>
+        <input type="file" id="itemPhoto" name="itemPhoto" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="itemPrice">Price:</label>
+        <input type="number" id="itemPrice" name="itemPrice" placeholder="Enter price" required>
+      </div>
+      <div class="form-group">
+        <label for="itemCategory">Select Item Category:</label>
+        <select id="itemCategory" name="itemCategory" required>
+          <option value="" disabled selected>Choose a category</option>
+          <option value="Books">Books</option>
+          <option value="Calculators">Calculators</option>
+          <option value="Protractors">Protractors</option>
+          <option value="Mini-Drafters">Mini-Drafters</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Add Item</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffa500;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  border-color: #ffa500;
+  outline: none;
+}
+
+button {
+  background: #ffa500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: #cc8400;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+</style>
+<script>
+document.getElementById('addItemForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const itemName = document.getElementById('Name').value;
+  const itemPhoto = document.getElementById('itemPhoto').files[0];
+  const itemPrice = document.getElementById('itemPrice').value;
+  const itemCategory = document.getElementById('itemCategory').value;
+
+  if (itemName && itemPhoto && itemPrice && itemCategory) {
+    alert('Item added successfully!');
+    this.reset();
+  } else {
+    alert('Please fill all fields!');
+  }
+});
+
+</script>

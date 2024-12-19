@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Swap Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">SwapShop</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="add-items.html">Add Items</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Template</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFA500; 
+            }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 2px;
+        }
+
+        .slide img {
+            width: 700px;
+            
+            margin-left:300px;
+            height:500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide-content {
+            text-align: center;
+            margin-top: 80px;
+            color: #fff;
+        }
+
+        .controls {
+            position: absolute;
+            top:83%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            
+            pointer-events: none;
+        }
+
+        .control {
+            background:darkorange;
+            border: none;
+            color:orange;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            pointer-events: all;
+            border-radius: 0%;
+            transition: background 0.3s ease;
+        }
+
+        .control:hover {
+            background: red;
+        }
+
+        .indicator-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: white;
+        }
+
+
+          .swapshop-section {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            margin-bottom:100px;
+            margin-left:100px;
+            max-width: 1000px;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+          }
+      
+          .image-part, .contact-part {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            transition: transform 0.3s ease-in-out;
+          }
+      
+          .image-part {
+            background-color: #ffba5c;
+            position: relative;
+          }
+      
+          
+          .image-part :hover {
+            background-color: #e76f2e;
+            
+          }
+      
+          .contact-part {
+            background-color:white;
+            flex-direction: column;
+          }
+      
+          .contact-part h3 {
+            margin: 0;
+            color:red;
+          }
+      
+          .contact-part p {
+            margin: 5px 0;
+            color: #555;
+          }
+      
+          .swapshop-section:hover .image-part {
+            transform: translateY(15px);
+          }
+
+          .footer {
+            background-color: #ff7f3f;
+            color: #fff;
+            padding: 40px 20px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: 0 -5px 15px rgba(255, 127, 63, 0.5);
+          }
+      
+          .footer .about-us {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 20px;
+          }
+      
+          .footer .about-us h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff7e6;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+          }
+      
+          .footer .about-us ul {
+            list-style-type: disc;
+            padding-left: 20px;
+          }
+      
+          .footer .about-us ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+          }
+      
+          .footer .about-us ul li:hover {
+            color: #ffe4c4;
+            text-decoration: underline;
+          }
+      
+          .footer .contact-info {
+            flex: 1;
+            min-width: 300px;
+            margin-left: 20px;
+          }
+      
+          .footer .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff7e6;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+          }
+      
+          .footer .contact-info p {
+            margin: 10px 0;
+            line-height: 1.6;
+          }
+      
+          .footer .contact-info p:hover {
+            color: #ffe4c4;
+          }
+      
+          .footer a {
+            color: #ffe4c4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+          }
+      
+          .footer a:hover {
+            color: #fff;
+          }
+      
+          .footer-bottom {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            padding-top: 10px;
+            font-size: 14px;
+          }
+      
+
+         
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide">
+            <img src="5.jpg"width=100 height=600 alt="Slide 1">
+            <div class="slide-content">
+                <h2>Advanced Feature 1</h2>
+                <p>Details about feature 1.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="7.jpg" width=200 height=600 alt="Slide 2">
+            <div class="slide-content">
+                <h2>Advanced Feature 2</h2>
+                <p>Details about feature 2.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="2.jpg"width=300 height=600 alt="Slide 3">
+            <div class="slide-content">
+                <h2>Advanced Feature 3</h2>
+                <p>Details about feature 3.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="6.jpg" alt="Slide 4"width=300 height=600>
+            <div class="slide-content">
+                <h2>Advanced Feature 4</h2>
+                <p>Details about feature 4.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="7.jpg" width=300 height=600 alt="Slide 5">
+            <div class="slide-content">
+                <h2>Advanced Feature 5</h2>
+                <p>Details about feature 5.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="control" id="prev">&#10094;</button>
+        <button class="control" id="next">&#10095;</button>
+    </div>
+</div>
+
+<div class="indicator-container" id="indicators">
+
+</div>
+
+
+
+<section class="about-container">
+    <h2>About Us</h2>
+    <p>Welcome to SwapShop! We are dedicated to providing a platform for students to buy and sell affordable engineering items. Our mission is to connect students and create a community where resources are shared efficiently.</p>
+    <p>SwapShop is the ultimate solution for affordable and high-quality engineering tools, promoting sustainability and community sharing.</p>
+
+</section>
+<div>
+<h1 style="text-align:center">Swapshop old thing exchanger<h1>
+</div>
+
+<div class="swapshop-section">
+        <div class="image-part">
+        
+      <img src="6.jpg" width=600 height=400>
+    </div>
+    <div class="contact-part">
+      <h3>Contact SwapShop</h3>
+      <p>Email: contact@swapshop.com</p>
+      <p>Phone: +1-234-567-890 </p>
+      <p>Address: 123 Swap Street, Engineer's City</p>
+    </div>
+  </div>
+</section>
+<section>
+    <div>
+        <h1 style="text-align:center">swapshop old thing exchanger<h1>
+        </div>
+        
+  <div class="swapshop-section">
+    <div class="image-part">
+      <img src="7.jpg" width=600 height=400>
+    </div>
+    <div class="contact-part">
+      <h3>Contact SwapShop</h3>
+      <p>Email: contact@swapshop.com</p>
+      <p>Phone: +1-234-567-890</p>
+      <p>Address: 123 Swap Street, Engineer's City</p>
+    </div>
+  </div>
+</section>
+<section>
+    <div>
+        <h1 style="text-align:center">swapshop old thing exchanger<h1>
+        </div>
+        
+  <div class="swapshop-section">
+    <div class="image-part">
+      <img src="4.jpg" width=600 height=400>
+    </div>
+    <div class="contact-part">
+      <h3>Contact SwapShop</h3>
+      <p>Email: contact@swapshop.com</p>
+      <p>Phone: +1-234-567-890</p>
+      <p>Address: 123 Swap Street, Engineer's City</p>
+    </div>
+  </div>
+</section>
+<section>
+    <div>
+        <h1 style="text-align:center">swapshop old thing exchanger<h1>
+        </div>
+        
+  <div class="swapshop-section">
+    <div class="image-part">
+      <img src="2.jpg" width=600 height=400>
+    </div>
+    <div class="contact-part">
+      <h3>Contact SwapShop</h3>
+      <p>Email: contact@swapshop.com</p>
+      <p>Phone: +1-234-567-890</p>
+      <p>Address: 123 Swap Street, Engineer's City</p>
+    </div>
+  </div>
+</section>
+<section>
+    <div>
+        <h1 style="text-align:center">swapshop old thing exchanger<h1>
+        </div>
+        
+  <div class="swapshop-section">
+    <div class="image-part">
+      <img src="6.jpg" width=600 height=400>
+    </div>
+    <div class="contact-part">
+      <h3>Contact SwapShop</h3>
+      <p>Email: contact@swapshop.com</p>
+      <p>Phone: +1-234-567-890</p>
+      <p>Address: 123 Swap Street, Engineer's City</p>
+    </div>
+  </div>
+
+</section>
+
+
+<section>
+  <div>
+      <h1 style="text-align:center">swapshop old thing exchanger<h1>
+      </div>
+      
+<div class="swapshop-section">
+  <div class="image-part">
+    <img src="8.jpg" width=600 height=400>
+  </div>
+  <div class="contact-part">
+    <h3>Contact SwapShop</h3>
+    <p>Email: contact@swapshop.com</p>
+    <p>Phone: +1-234-567-890</p>
+    <p>Address: 123 Swap Street, Engineer's City</p>
+  </div>
+</div>
+
+</section>
+<section>
+  <div>
+      <h1 style="text-align:center">swapshop old thing exchanger<h1>
+      </div>
+      
+<div class="swapshop-section">
+  <div class="image-part">
+    <img src="9.jpg" width=600 height=400>
+  </div>
+  <div class="contact-part">
+    <h3>Contact SwapShop</h3>
+    <p>Email: contact@swapshop.com</p>
+    <p>Phone: +1-234-567-890</p>
+    <p>Address: 123 Swap Street, Engineer's City</p>
+  </div>
+</div>
+
+</section>
+<section>
+  <div>
+      <h1 style="text-align:center">swapshop old thing exchanger<h1>
+      </div>
+      
+<div class="swapshop-section">
+  <div class="image-part">
+    <img src="10.jpg" width=600 height=400>
+  </div>
+  <div class="contact-part">
+    <h3>Contact SwapShop</h3>
+    <p>Email: contact@swapshop.com</p>
+    <p>Phone: +1-234-567-890</p>
+    <p>Address: 123 Swap Street, Engineer's City</p>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="about-us">
+      <h3>About Swap Shop</h3>
+      <ul>
+        <li>We provide affordable used engineering tools for students.</li>
+        <li>Swap and save a sustainable way to shop.</li>
+        <li>Wide range of products: books, calculators, and more.</li>
+        <li>Committed to reducing waste and promoting reuse.</li>
+        <li>Customer satisfaction is our top priority.</li>
+      </ul>
+    </div>
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p>Email: contact@swapshop.com</p>
+      <p>Phone: +91730297670</p>
+      <p>Address: 123 Swap Street, Engineer's City</p>
+      <p><a href="#contact">Get in Touch</a></p>
+    </div>
+    <div class="footer-bottom">
+       2024 Swap Shop 
+       </div>
+  </footer>
+
+<script>
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const indicatorsContainer = document.getElementById('indicators');
+
+    let currentIndex = 0;
+
+    function updateSliderPosition() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateIndicators();
+    }
+
+    function updateIndicators() {
+        const indicators = document.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function createIndicators() {
+        slides.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.classList.add('indicator');
+            if (index === currentIndex) indicator.classList.add('active');
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateSliderPosition();
+            });
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+        updateSliderPosition();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+        updateSliderPosition();
+    });
+
+    createIndicators();
+    updateSliderPosition();
+</script>
+
+
+
+</body>
+</html>
+
